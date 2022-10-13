@@ -1,0 +1,31 @@
+#Cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 2rem;
+}
+
+#Cadastro .form{
+    background-color: #f1f1f1;
+    width: 100%;
+    max-width: 480px;
+    padding: 0.5rem;
+}
+
+#Cadastro .field{
+    padding-bottom: 0.5rem;
+}
+#Cadastro .field label{
+    display: block;
+}
+
+#Cadastro .field input{
+    width: 100%;
+}
+
+#Cadastro .actions{
+    text-align: center;
+    margin-top: 0.5rem;
+}
