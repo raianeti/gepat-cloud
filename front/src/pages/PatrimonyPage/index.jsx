@@ -3,20 +3,20 @@ import "./styles.css";
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-import { MainButton } from '../../componentes/mainButton/';
+import { MainButton } from '../../componentes/mainButton';
 
-const CadastroUserPage = () => {
+const PatrimonyPage = () => {
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [number, setNumber] = useState("");
+    const [location, setLocation] = useState("");
 
 
-    const handleSubmit = async e => {
+const handleSubmit = async e => {
         e.preventDefault();
-        const user = { name, email, password };
+        const user = { name, number, location };
         // enviar o nome de usuário e a senha ao servidor
         const response = await axios.post(
-          "http://ld-patrimony-management-1460998202.us-east-1.elb.amazonaws.com/api/v1/user",
+          "http://ld-patrimony-management-1460998202.us-east-1.elb.amazonaws.com/api/v1/patrimony",
           user
         );
     
@@ -27,10 +27,9 @@ const CadastroUserPage = () => {
         localStorage.setItem('user', response.data)
         console.log(response.data)
       };
-
     return(
-        <div id="Cadastro">
-            <h1 className="title">Cadastro de Usuários</h1>
+        <div id="Patrimony">
+            <h1 className="title">Cadastro de Itens</h1>
             <form className="form" onSubmit={handleSubmit}>
                 <div className="field">
                     <label htmlFor="name">Nome</label>
@@ -43,33 +42,31 @@ const CadastroUserPage = () => {
                     />
                 </div>
                 <div className="field">
-                    <label htmlFor="email">E-mail</label>
+                    <label htmlFor="string">Número</label>
                     <input 
                     type="string" 
-                    name="email" 
-                    id="email" 
-                    value={email} 
-                    onChange={(e) => setEmail(e.target.value)}
+                    name="number" 
+                    id="number" 
+                    value={number} 
+                    onChange={(e) => setNumber(e.target.value)}
                     />
                 </div>
 
                 <div className="field">
-                    <label htmlFor="password">Senha</label>
+                    <label htmlFor="string">Local</label>
                     <input 
                     type="string" 
-                    name="password" 
-                    id="password"
-                    value={password} 
-                    onChange={(e) => setPassword(e.target.value)} 
+                    name="location" 
+                    id="location"
+                    value={location} 
+                    onChange={(e) => setLocation(e.target.value)} 
                     />
                 </div>
 
                 <div className="actions">
                     <button type="submit">Cadastrar</button>
                 </div>
-                <div className="actions">
-                    Já tem um cadastro? <Link to="/login"><span>Entrar</span></Link>
-                </div>
+                
              
             </form>
         </div>
@@ -77,4 +74,4 @@ const CadastroUserPage = () => {
     );
 }
 
-export default CadastroUserPage
+export default PatrimonyPage

@@ -6,28 +6,38 @@ import axios from 'axios'
 const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-{/*
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("submit", {email, password});
-    };
-*/}
 
 const handleSubmit = async e => {
     e.preventDefault();
     const user = { email, password };
     // enviar o nome de usuário e a senha ao servidor
-    const response = await axios.post(
+  /*  const response = await axios.post(
       "http://ld-patrimony-management-1460998202.us-east-1.elb.amazonaws.com/api/v1/login",
       user
     );
+*/
+    axios
+            .post('http://ld-patrimony-management-1460998202.us-east-1.elb.amazonaws.com/api/v1/login', {}, {
+                auth: {
+                    email: email,
+                    password: password
+                }
+            })
+            .then(response => (this.info = response))
+            .catch(error => {
+                console.log("o catch pegou " +error);
+                this.errored = true;
+            })
+            .finally(() =>{
+                this.loading = false;
+            });
 
     
     // definir o state do usuário
    // setUser(response.data)
     // armazenar o usuário em localStorage
-    localStorage.setItem('user', response.data)
-    console.log(response.data)
+    //localStorage.setItem('user', response.data)
+    //console.log(response.data)
   };
     return(
         <div id="Login">
