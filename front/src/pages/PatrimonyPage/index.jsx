@@ -2,7 +2,7 @@ import React from 'react';
 import "./styles.css";
 import { useEffect, useState } from 'react';
 import axios from 'axios'
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { MainButton } from '../../componentes/mainButton';
 
 const PatrimonyPage = () => {
