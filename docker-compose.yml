@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  front:
+    container_name: "raianeti/gepat-cloud:gepat-cloud"
+    build: .
+    ports:
+      - '3000:3000'
+ 
+    

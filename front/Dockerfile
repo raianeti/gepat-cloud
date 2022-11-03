@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:14
 
 WORKDIR /app
 
@@ -8,6 +8,8 @@ RUN npm install
 RUN npm install react-router-dom
 
 COPY . .
+
+RUN npm run build
 
 EXPOSE 3000
 
