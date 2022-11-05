@@ -6,7 +6,7 @@
 - NPM 
 
 ### Passo a passo 
-- clone o repositório  
+- Clone o repositório  
 `git clone https://github.com/raianeti/patrimony-management.git`
 
 - Instale as dependencias   
