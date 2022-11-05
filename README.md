@@ -7,13 +7,14 @@
 
 ### Passo a passo 
 - Clone o repositório  
-`git clone https://github.com/raianeti/patrimony-management.git`
+`git clone https://github.com/raianeti/gepat-cloud.git`
 
 - Instale as dependencias   
 `npm install`
 
 - Rode o o comando de build  
 `npm run build` 
+
 `docker build -f Dockerfile -t raianeti/gepat-cloud:gepat-cloud .`
 
 - Inicie o docker  
