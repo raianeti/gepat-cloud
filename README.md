@@ -1,6 +1,6 @@
 # Gerenciamento de Patrimonio - Gepat-Cloud
 
-### Pré requisitos
+### Pré-requisitos
 - React JS
 - Docker
 - NPM 
