@@ -14,7 +14,6 @@
 
 - Rode o o comando de build  
 `npm run build` 
-
 `docker build -f Dockerfile -t raianeti/gepat-cloud:gepat-cloud .`
 
 - Inicie o docker  
